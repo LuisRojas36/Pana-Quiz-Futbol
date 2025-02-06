@@ -2,7 +2,8 @@ var futbolistasObj = [];
 var FutbolistasSugerencias = [];
 var futbolistasRespaldo = [];
 var futbolistaActual = [];
-const futbolistas = [
+var contador = 1;
+var futbolistas = [
   [
     "Gheorghe Hagi",
     "Farul Constanța",
@@ -244,16 +245,6 @@ const futbolistas = [
     "Barcelona",
     "Hebei FC",
     "Estudiantes de La Plata",
-  ],
-  [
-    "Ángel Di María",
-    "Rosario Central",
-    "Benfica",
-    "Real Madrid",
-    "Manchester United",
-    "Paris SG",
-    "Juventus",
-    "Benfica",
   ],
   [
     "Kun Agüero",

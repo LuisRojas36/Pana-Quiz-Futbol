@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   let temporizador;
   let aciertos = 0; // Contador de aciertos
   let historialScores = [];
-  let nombreJugador;
+  let nombreJugador = "Jugador " + contador;
   // Pedir el nombre del jugador antes de iniciar el juego
 
   const sugerenciasDiv = document.getElementById("sugerencias");
@@ -128,6 +128,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         respuestaInput.disabled = true;
         comprobarBtn.disabled = true;
         guardarScore(nombreJugador, aciertos); // Reinicia los aciertos
+        contador++;
         aciertos = 0;
         document.getElementById("score").textContent = `Aciertos: ${aciertos}`;
       }
@@ -179,16 +180,9 @@ document.addEventListener("DOMContentLoaded", async () => {
   document.getElementById("intentar-de-nuevo").addEventListener("click", () => {
     respuestaInput.disabled = false;
     comprobarBtn.disabled = false;
-    //Pide el nombre del jugador nuevamente si quiere jugar otra vez
-    nombreJugador = prompt("Por favor, ingresa tu nombre:");
-    if (!nombreJugador) {
-      nombreJugador = "Jugador Anónimo"; // Nombre por defecto si no se ingresa nada
-    }
-    iniciarJuego(); // Reinicia el juego cuando se hace clic en el botón
+
+    iniciarJuego();
+    // Reinicia el juego cuando se hace clic en el botón
   });
-  nombreJugador = prompt("Por favor, ingresa tu nombre:");
-  if (!nombreJugador) {
-    nombreJugador = "Jugador Anónimo"; // Nombre por defecto si no se ingresa nada
-  }
   await iniciarJuego(); // Asegurarse de esperar la carga de datos antes de pintar
 });
