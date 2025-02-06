@@ -1,1 +1,1 @@
-Pagina creacion para portafolio
+"¿Eres un experto en fichajes de fútbol? Demuestra cuánto sabes sobre el mercado de transferencias en este divertido quiz. Analiza los equipos por los que ha pasado cada jugador y adivina quién es. Desde leyendas históricas hasta los últimos movimientos del mercado, este desafío pondrá a prueba tu memoria y pasión por el fútbol. ¡Juega ahora y reta a tus amigos a ver quién acierta más!"
