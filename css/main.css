@@ -75,16 +75,6 @@ body {
   padding: 5px 0;
   border-bottom: 1px solid #ddd;
 }
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-}
-
 #intentar-de-nuevo {
   padding: 10px 20px;
   background-color: #007bff;
@@ -186,4 +176,42 @@ button:hover {
 #resultado {
   margin-top: 20px;
   font-weight: bold;
+}
+
+/* Media Queries para móviles */
+@media (max-width: 600px) {
+  .container {
+    max-width: 95%; /* Ocupa más ancho en móviles */
+    padding: 10px; /* Menos padding en móviles */
+  }
+
+  #respuesta,
+  #comprobar {
+    width: 100%; /* Ocupa todo el ancho en móviles */
+  }
+
+  #escudos-container img {
+    width: 80px; /* Escudos más pequeños en móviles */
+    height: 80px;
+  }
+
+  .flecha {
+    font-size: 30px; /* Flechas más pequeñas en móviles */
+  }
+
+  #historial-scores {
+    width: 100%; /* Ocupa todo el ancho en móviles */
+    margin-top: 20px; /* Más espacio en móviles */
+  }
+
+  #nombre-usuario-container {
+    flex-direction: column; /* Apila el input y el botón en móviles */
+    gap: 10px; /* Espacio entre elementos */
+  }
+
+  #nombre-usuario,
+  #confirmar-nombre {
+    width: 100%; /* Ocupa todo el ancho en móviles */
+    margin-left: 0; /* Elimina el margen izquierdo */
+  }
 }
