@@ -128,7 +128,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         respuestaInput.disabled = true;
         comprobarBtn.disabled = true;
         guardarScore(nombreJugador, aciertos); // Reinicia los aciertos
-        contador++;
+        contador = contador++;
         aciertos = 0;
         document.getElementById("score").textContent = `Aciertos: ${aciertos}`;
       }
