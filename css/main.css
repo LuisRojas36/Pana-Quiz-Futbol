@@ -20,7 +20,6 @@ body {
   flex-direction: column;
   align-items: center;
   margin-right: 20px; /* Espacio entre el juego y el historial */
-  margin-left: 10%;
 }
 .container10 {
   background-color: #e4d6c6;
@@ -197,7 +196,7 @@ button:hover {
   .container {
     max-width: 95%; /* Ocupa más ancho en móviles */
     padding: 10px; /* Menos padding en móviles */
-    margin-left: 40px;
+    margin-left: 30%;
   }
 
   #respuesta,
