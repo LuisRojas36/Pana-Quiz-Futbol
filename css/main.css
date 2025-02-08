@@ -197,7 +197,7 @@ button:hover {
   .container {
     max-width: 95%; /* Ocupa más ancho en móviles */
     padding: 10px; /* Menos padding en móviles */
-    margin-left: 10%;
+    margin-left: 40px;
   }
 
   #respuesta,
