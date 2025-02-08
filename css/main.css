@@ -21,6 +21,19 @@ body {
   align-items: center;
   margin-right: 20px; /* Espacio entre el juego y el historial */
 }
+.container10 {
+  background-color: #e4d6c6;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 80%;
+  min-width: 50%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 20px; /* Espacio entre el juego y el historial */
+}
 
 #respuesta {
   padding: 10px;
@@ -124,7 +137,7 @@ body {
   font-size: 1.2em;
   font-weight: bold;
   color: #333;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 #escudos-container {
@@ -214,4 +227,268 @@ button:hover {
     width: 100%; /* Ocupa todo el ancho en móviles */
     margin-left: 0; /* Elimina el margen izquierdo */
   }
+}
+
+.welcome-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 600px;
+  width: 100%;
+}
+
+h1 {
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 1.2em;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.quiz-option {
+  display: inline-block;
+  margin: 10px;
+  text-align: center;
+}
+
+.quiz-option a {
+  text-decoration: none;
+  color: #333;
+}
+
+.quiz-option img {
+  width: 200px;
+  height: 200px;
+  border-radius: 8px;
+  border: 2px solid #ddd;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.quiz-option img:hover {
+  transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Sombra al pasar el mouse */
+}
+
+.quiz-option p {
+  margin-top: 10px;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+#volver-inicio {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 20px; /* Margen superior para separarlo de los demás elementos */
+  display: block; /* Hace que el botón ocupe toda la línea */
+  margin-left: auto; /* Centra el botón horizontalmente */
+  margin-right: auto; /* Centra el botón horizontalmente */
+}
+.volver-container {
+  margin-top: auto; /* Empuja el botón hacia la parte inferior */
+  padding: 15px; /* Espacio alrededor del botón */
+}
+
+#volver-inicio:hover {
+  background-color: #0056b3;
+}
+#pregunta {
+  font-size: 40px;
+  color: #000;
+  margin-bottom: 10px;
+}
+
+#lista-jugadores {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 10px;
+  min-width: 90%;
+  justify-content: center;
+  align-items: center;
+}
+#comprobar {
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+#comprobar:hover {
+  background-color: #218838;
+}
+
+.modal {
+  display: none; /* Ocultar el modal por defecto */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#volver-inicio {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#volver-inicio:hover {
+  background-color: #0056b3;
+}
+
+#pregunta {
+  font-size: 35px;
+  margin-bottom: 20px;
+}
+
+.jugador-container span {
+  font-size: 40px;
+  font-weight: bold;
+  min-width: 90px; /* Asegura que el número tenga un tamaño fijo */
+  text-align: right;
+}
+
+.bandera-img {
+  width: 40px; /* Ajusta el tamaño de la bandera */
+  height: auto;
+}
+
+.jugador-input {
+  padding: 15px; /* Aumenta el padding para más espacio interno */
+  font-size: 1.5em; /* Aumenta el tamaño de la fuente */
+  width: 90%; /* Ocupa todo el ancho disponible */
+  height: 35px; /* Aumenta la altura del input */
+  border: 2px solid gray; /* Borde del input */
+  border-radius: 5px; /* Bordes redondeados */
+  text-align: center; /* Centra el texto */
+  box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+}
+
+.correcto {
+  border: 2px solid green;
+  background-color: #ccffcc;
+}
+
+.incorrecto {
+  border: 2px solid red;
+  background-color: #ffcccc;
+}
+
+#cambiar-ranking {
+  margin-top: 20px;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+}
+
+#cambiar-ranking:hover {
+  background-color: #0056b3;
+}
+/* Asegura que el contenedor del input y las sugerencias tengan posición relativa */
+.jugador-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: flex-start;
+  min-width: 90%;
+  position: relative; /* Permite posicionar las sugerencias correctamente */
+}
+
+/* Asegura que las sugerencias aparezcan debajo del input */
+.sugerencias10 {
+  position: absolute;
+  top: 100%; /* Coloca las sugerencias justo debajo del input */
+  left: 0;
+  min-width: 100%;
+  background-color: white;
+  border: 1px solid #ccc;
+  max-height: 150px;
+  overflow-y: auto;
+  z-index: 1000; /* Asegura que se vea encima de otros elementos */
+  display: none;
+}
+
+/* Estiliza cada sugerencia */
+.sugerencia-item {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.sugerencia-item:hover {
+  background-color: #f0f0f0;
+}
+.quiz-container {
+  position: relative;
+  display: inline-block;
+  overflow: hidden; /* Evita que el overlay se salga del contenedor */
+}
+
+.quiz-container img {
+  width: 200px; /* Ajusta según el tamaño de tu imagen */
+  height: auto;
+  display: block;
+  transition: opacity 0.3s ease; /* Efecto suave */
+}
+
+/* Capa oscura sobre la imagen */
+.quiz-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7); /* Fondo oscuro semitransparente */
+  opacity: 0; /* Oculto por defecto */
+  transition: opacity 0.3s ease;
+}
+
+/* Texto en el centro */
+.quiz-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  opacity: 0; /* Oculto por defecto */
+  transition: opacity 0.3s ease;
+}
+
+/* Efecto al pasar el mouse */
+.quiz-container:hover .quiz-overlay,
+.quiz-container:hover .quiz-text {
+  opacity: 1; /* Muestra el overlay y el texto */
 }
