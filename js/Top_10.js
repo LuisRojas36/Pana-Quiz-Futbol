@@ -13,22 +13,31 @@ async function obtenerBandera(nombreEquipo) {
 function removerAcentos(texto) {
   return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 }
+function extraerJugadores(preguntas) {
+  let jugadoresDisponibles = [];
+
+  preguntas.forEach((pregunta) => {
+    // Ignorar el primer elemento (título) y recorrer los jugadores
+    pregunta.slice(1).forEach((jugador) => {
+      if (!jugadoresDisponibles.includes(jugador[0])) {
+        jugadoresDisponibles.push(jugador[0]); // Solo agregar el nombre del jugador
+      } else {
+        console.log("Jugador: " + jugador[0] + " ya agregado");
+      }
+    });
+  });
+
+  return jugadoresDisponibles;
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   const preguntaElemento = document.getElementById("pregunta");
   const listaJugadores = document.getElementById("lista-jugadores");
   const cambiarRankingBtn = document.getElementById("cambiar-ranking");
-  const jugadoresDisponibles = [
-    "Lionel Messi",
-    "Cristiano Ronaldo",
-    "Neymar",
-    "Kylian Mbappé",
-    "Luka Modrić",
-    "Karim Benzema",
-    "Kevin De Bruyne",
-    "Robert Lewandowski",
-    "Erling Haaland",
-    "Vinícius Jr.",
-  ];
+  // Llamar a la función y obtener los nombres
+  const jugadoresDisponibles = extraerJugadores(preguntasTOP10);
+  console.log(jugadoresDisponibles);
+
   // Función para cargar un ranking aleatorio
   async function cargarRankingAleatorio() {
     rankingActual =
@@ -82,6 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
       divJugador.appendChild(bandera);
       divJugador.appendChild(inputContainer);
       listaJugadores.appendChild(divJugador);
+      iniciarContador(120);
     });
   }
   // Función para mostrar sugerencias
@@ -189,8 +199,6 @@ document.addEventListener("DOMContentLoaded", () => {
       window.location.href = "index.html"; // Cambia esto si la ruta es diferente
     });
   }
-  // Iniciar el contador con 2 minutos (120 segundos)
-  iniciarContador(120);
   // Cargar un ranking al iniciar la página
   cargarRankingAleatorio();
 });

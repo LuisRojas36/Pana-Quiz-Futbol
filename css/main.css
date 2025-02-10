@@ -1,6 +1,13 @@
+/* Importar fuente moderna desde Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap");
+
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(
+    135deg,
+    #6a11cb,
+    #2575fc
+  ); /* Azul violeta a azul claro */
   display: flex;
   justify-content: center;
   align-items: flex-start; /* Alinea los elementos en la parte superior */
@@ -10,10 +17,13 @@ body {
 }
 
 .container {
-  background-color: #d5ba98;
+  background-color: #e4d6c6;
+  background: rgba(255, 255, 255, 0.1); /* Fondo con transparencia */
+  backdrop-filter: blur(10px); /* Efecto de desenfoque */
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3); /* Sombra más suave */
+  transition: all 0.3s ease-in-out;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   max-width: 80%;
   text-align: center;
   display: flex;
@@ -25,8 +35,11 @@ body {
   background-color: #e4d6c6;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3); /* Sombra más suave */
+  transition: all 0.3s ease-in-out;
   max-width: 80%;
+  background: rgba(255, 255, 255, 0.1); /* Fondo con transparencia */
+  backdrop-filter: blur(10px); /* Efecto de desenfoque */
   min-width: 50%;
   text-align: center;
   display: flex;
@@ -34,7 +47,9 @@ body {
   align-items: center;
   margin-right: 20px; /* Espacio entre el juego y el historial */
 }
-
+.container10:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
 #respuesta {
   padding: 10px;
   width: 300px;
@@ -131,13 +146,6 @@ body {
   font-size: 1.2em;
   font-weight: bold;
   color: #333;
-  margin-top: 10px;
-}
-#contador {
-  font-size: 1.2em;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 15px;
 }
 
 #escudos-container {
@@ -231,25 +239,42 @@ button:hover {
 }
 
 .welcome-container {
-  background-color: #fff;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.1); /* Fondo con transparencia */
+  backdrop-filter: blur(10px); /* Efecto de desenfoque */
   text-align: center;
   max-width: 600px;
   width: 100%;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3); /* Sombra más suave */
+  transition: all 0.3s ease-in-out;
+}
+/* Efecto hover para que se vea más moderno */
+.welcome-container:hover {
+  background: rgba(255, 255, 255, 0.2);
 }
 
 h1 {
-  font-size: 2em;
-  color: #333;
+  color: #ffffff; /* Blanco puro */
   margin-bottom: 10px;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4); /* Sombra suave para mejorar la visibilidad */
+}
+/* Subtítulo */
+p {
+  color: #f1f1f1; /* Gris muy claro */
+  font-size: 1.2rem;
+  text-align: center;
+  font-weight: 400;
 }
 
-p {
-  font-size: 1.2em;
-  color: #666;
-  margin-bottom: 20px;
+/* Efecto de iluminación al pasar el mouse */
+h1:hover,
+p:hover {
+  color: #ffeb3b; /* Amarillo claro al hacer hover */
+  transition: color 0.3s ease-in-out;
 }
 
 .quiz-option {
@@ -302,9 +327,28 @@ p {
   background-color: #0056b3;
 }
 #pregunta {
-  font-size: 40px;
-  color: #000;
-  margin-bottom: 10px;
+  max-height: 35px;
+  color: #ffffff; /* Blanco puro */
+  font-size: 2.5rem;
+  font-weight: 550;
+  text-align: center;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4); /* Sombra suave para mejorar la visibilidad */
+}
+
+/* Subtítulo */
+#contador {
+  max-height: 20px;
+  color: #f1f1f1; /* Gris muy claro */
+  font-size: 1.5rem;
+  text-align: center;
+  font-weight: 400;
+}
+
+/* Efecto de iluminación al pasar el mouse */
+#pregunta:hover,
+#contador:hover {
+  color: #ffeb3b; /* Amarillo claro al hacer hover */
+  transition: color 0.3s ease-in-out;
 }
 
 #lista-jugadores {
@@ -317,7 +361,7 @@ p {
   align-items: center;
 }
 #comprobar {
-  padding: 10px 20px;
+  padding: 10px 10px;
   background-color: #28a745;
   color: #fff;
   border: none;
@@ -343,7 +387,7 @@ p {
 }
 
 .modal-content {
-  background-color: #fff;
+  background-color: #007bff;
   padding: 20px;
   border-radius: 8px;
   text-align: center;
@@ -364,13 +408,8 @@ p {
   background-color: #0056b3;
 }
 
-#pregunta {
-  font-size: 35px;
-  margin-bottom: 20px;
-}
-
 .jugador-container span {
-  font-size: 40px;
+  font-size: 30px;
   font-weight: bold;
   min-width: 90px; /* Asegura que el número tenga un tamaño fijo */
   text-align: right;
