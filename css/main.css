@@ -37,7 +37,7 @@ body {
   border-radius: 8px;
   box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3); /* Sombra más suave */
   transition: all 0.3s ease-in-out;
-  max-width: 80%;
+  max-width: 75%;
   background: rgba(255, 255, 255, 0.1); /* Fondo con transparencia */
   backdrop-filter: blur(10px); /* Efecto de desenfoque */
   min-width: 50%;
@@ -201,12 +201,53 @@ button:hover {
 
 /* Media Queries para móviles */
 @media (max-width: 600px) {
-  .container {
-    max-width: 95%; /* Ocupa más ancho en móviles */
-    padding: 10px; /* Menos padding en móviles */
-    margin-left: 30%;
+  .container10 {
+    max-width: 95%; /* Usa un ancho más amplio en móviles */
+    min-width: unset; /* Evita restricciones innecesarias */
+    padding: 15px; /* Reduce el padding para que no se vea tan grande */
+    margin: 0 auto; /* Centra el contenedor */
   }
 
+  #pregunta {
+    font-size: 18px; /* Ajusta el tamaño del título */
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.2;
+    margin: 0%;
+  }
+
+  #contador {
+    margin: 0%;
+    font-size: 14px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  /* Ajusta la lista de jugadores */
+  #lista-jugadores {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .jugador-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%; /* Ajusta al 100% para evitar desplazamientos */
+    gap: 5px;
+  }
+
+  .bandera-img {
+    width: 25px;
+    height: auto;
+  }
+
+  .jugador-input {
+    width: 65%; /* Ajusta para que no se desborde */
+    text-align: center;
+  }
   #respuesta,
   #comprobar {
     width: 100%; /* Ocupa todo el ancho en móviles */
@@ -327,6 +368,7 @@ p:hover {
   background-color: #0056b3;
 }
 #pregunta {
+  margin: 0%;
   max-height: 35px;
   color: #ffffff; /* Blanco puro */
   font-size: 2.5rem;
@@ -409,7 +451,7 @@ p:hover {
 }
 
 .jugador-container span {
-  font-size: 30px;
+  font-size: 20px;
   font-weight: bold;
   min-width: 90px; /* Asegura que el número tenga un tamaño fijo */
   text-align: right;
