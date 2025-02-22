@@ -86,7 +86,7 @@ body {
 
 /* Palabra encontrada en la lista */
 #lista-palabras li.encontrada {
-  color: #4caf50; /* Verde */
+  color: #03118a; /* Verde */
   font-weight: bold;
 }
 

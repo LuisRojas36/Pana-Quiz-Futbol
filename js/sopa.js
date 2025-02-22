@@ -1,15 +1,7 @@
-const jugadores_encontrar = [
-  "MESSI",
-  "RONALDO",
-  "NEYMAR",
-  "MBAPPE",
-  "MODRIC",
-  "BENZEMA",
-  "HAALAND",
-  "ZIDANE",
-  "MARADONA",
-  "PELE",
-];
+var palabras;
+let palabrasEncontradas = new Set();
+let totalPalabras = 0;
+
 document.getElementById("sopa-container").style.fontFamily = "sans-serif";
 document.querySelector("h1").style.fontSize = "30px";
 document.querySelector("h1").style.fontFamily = "sans-serif";
@@ -33,7 +25,41 @@ const direcciones = [
   [1, -1], // Diagonal arriba-derecha
   [-1, 1], // Diagonal abajo-izquierda
 ];
+function cargarCategoriaAleatoria() {
+  const index = Math.floor(Math.random() * jugadores_encontrar.length);
+  const categoriaSeleccionada = jugadores_encontrar[index];
+  const titulo = categoriaSeleccionada[0];
+  palabras = categoriaSeleccionada.slice(1);
 
+  // Cambiar el título en el H1
+  document.querySelector("h1").textContent = `Sopa de Letras - ${titulo}`;
+  // Reiniciar el contador de palabras encontradas
+  palabrasEncontradas.clear();
+  totalPalabras = palabras.length;
+
+  // Generar la sopa de letras con las nuevas palabras
+  generarSopa(palabras);
+}
+
+// Función para marcar palabras como encontradas
+function palabraEncontrada(palabra) {
+  if (!palabrasEncontradas.has(palabra)) {
+    palabrasEncontradas.add(palabra);
+    // Verificar si todas las palabras han sido encontradas
+    if (palabrasEncontradas.size === totalPalabras) {
+      mostrarModal();
+    }
+  }
+}
+function mostrarModal(titulo, mensaje) {
+  const modal = document.getElementById("completado-modal");
+  modal.style.display = "flex";
+
+  // Cerrar y recargar cuando se haga clic en el botón
+  document.getElementById("volver-inicio").addEventListener("click", () => {
+    window.location.href = "index.html"; // Cambia esto si la ruta es diferente
+  });
+}
 function colocarPalabra(palabra) {
   let colocada = false;
   let intentos = 100; // Evitar bucles infinitos
@@ -80,8 +106,8 @@ function colocarPalabra(palabra) {
 }
 
 // Generar la sopa
-function generarSopa() {
-  jugadores_encontrar.forEach(colocarPalabra);
+function generarSopa(palabras) {
+  palabras.forEach(colocarPalabra);
 
   for (let i = 0; i < gridSize; i++) {
     for (let j = 0; j < gridSize; j++) {
@@ -108,7 +134,7 @@ function generarSopa() {
   });
 
   const listaPalabras = document.getElementById("lista-palabras");
-  jugadores_encontrar.forEach((palabra) => {
+  palabras.forEach((palabra) => {
     const li = document.createElement("li");
     li.textContent = palabra;
     li.dataset.palabra = palabra;
@@ -191,13 +217,14 @@ function validarPalabra() {
     .map((cell) => cell.textContent)
     .join("");
 
-  if (jugadores_encontrar.includes(textoSeleccionado)) {
+  if (palabras.includes(textoSeleccionado)) {
     document
       .querySelector(`li[data-palabra="${textoSeleccionado}"]`)
       .classList.add("encontrada");
     seleccionadas.forEach((cell) => {
       cell.classList.remove("selected");
       cell.classList.add("word-found"); // Cambia el estilo de la palabra encontrada
+      palabraEncontrada(textoSeleccionado);
     });
   } else {
     seleccionadas.forEach((cell) => cell.classList.remove("selected"));
@@ -206,4 +233,7 @@ function validarPalabra() {
   seleccionadas = []; // Reiniciar selección
 }
 
-window.onload = generarSopa;
+// Iniciar el juego con una categoría aleatoria al cargar la página
+document.addEventListener("DOMContentLoaded", () => {
+  cargarCategoriaAleatoria();
+});
