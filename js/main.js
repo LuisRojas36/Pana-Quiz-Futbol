@@ -136,19 +136,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
   function guardarScore(nombre, aciertos) {
     // Agrega el score al historial
-    historialScores.push({ nombre, aciertos });
-
-    // Ordena el historial de scores de mayor a menor
-    historialScores.sort((a, b) => b.aciertos - a.aciertos);
-
-    // Muestra el historial de scores
-    const listaScores = document.getElementById("lista-scores");
-    listaScores.innerHTML = ""; // Limpia la lista antes de actualizarla
-    historialScores.forEach((score, index) => {
-      const li = document.createElement("li");
-      li.textContent = `${score.nombre}: ${score.aciertos} aciertos`;
-      listaScores.appendChild(li);
-    });
+    console.log("rebook");
   }
 
   comprobarBtn.addEventListener("click", () => {

@@ -1278,7 +1278,7 @@ var preguntasTOP10 = [
     ["Hervé Revelli", "france"],
     ["Thadée Cisowski", "france"],
     ["Roger Piantoni", "france"],
-    ["Kyliam Mbappe", "france"],
+    ["Kylian Mbappe", "france"],
     ["Joseph Ujlaki", "france"],
     ["Fleury Di Nallo", "france"],
     ["Gunnar Andersson", "Sweden"],

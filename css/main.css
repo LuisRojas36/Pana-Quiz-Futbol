@@ -15,7 +15,86 @@ body {
   margin: 0;
   padding: 20px;
 }
+.container_sopa {
+  display: flex;
+  flex-direction: column; /* 🔹 Asegura que el h1 esté arriba */
+  align-items: center;
+  justify-content: center; /* Centra todo horizontalmente */
+  margin: 0 auto; /* Centrar en la pantalla */
+  max-width: 75%;
+  margin: 20px auto;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  display: flex; /* Activa el diseño en fila */
+  gap: 20px; /* Espacio entre los divs */
+}
 
+#sopa-container {
+  display: grid;
+  grid-template-columns: repeat(15, 30px);
+  grid-template-rows: repeat(15, 30px);
+  gap: 3px;
+  max-width: 75%;
+  justify-content: center;
+}
+
+.cell {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.cell.selected {
+  background: yellow;
+  color: black;
+} /* Contenedor que agrupa la sopa de letras y la lista de palabras */
+.game-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px; /* Espacio entre la sopa y la lista */
+}
+
+/* Estilos para la lista de palabras */
+#palabras-a-encontrar {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 15px;
+  border-radius: 10px;
+  max-width: 20%;
+  text-align: left;
+}
+
+/* Lista de palabras */
+#lista-palabras {
+  list-style: none;
+  padding: 0;
+}
+
+#lista-palabras li {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+/* Palabra encontrada en la lista */
+#lista-palabras li.encontrada {
+  color: #4caf50; /* Verde */
+  font-weight: bold;
+}
+
+/* Palabras resaltadas en la sopa de letras */
+.word-found {
+  background: green !important;
+  color: white !important;
+}
 .container {
   background-color: #e4d6c6;
   background: rgba(255, 255, 255, 0.1); /* Fondo con transparencia */
@@ -23,13 +102,14 @@ body {
   box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3); /* Sombra más suave */
   transition: all 0.3s ease-in-out;
   padding: 20px;
+  min-width: auto;
   border-radius: 8px;
-  max-width: 80%;
+  max-width: 90%;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-right: 20px; /* Espacio entre el juego y el historial */
+  margin-left: 10%;
 }
 .container10 {
   background-color: #e4d6c6;
@@ -84,13 +164,6 @@ body {
 
 #sugerencias div:hover {
   background-color: #f0f0f0;
-}
-#historial-scores {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 200px; /* Ancho fijo para el historial */
 }
 
 #lista-scores {
@@ -199,93 +272,13 @@ button:hover {
   font-weight: bold;
 }
 
-/* Media Queries para móviles */
-@media (max-width: 600px) {
-  .container10 {
-    max-width: 95%; /* Usa un ancho más amplio en móviles */
-    min-width: unset; /* Evita restricciones innecesarias */
-    padding: 15px; /* Reduce el padding para que no se vea tan grande */
-    margin: 0 auto; /* Centra el contenedor */
-  }
-
-  #pregunta {
-    font-size: 18px; /* Ajusta el tamaño del título */
-    font-weight: bold;
-    text-align: center;
-    line-height: 1.2;
-    margin: 0%;
-  }
-
-  #contador {
-    margin: 0%;
-    font-size: 14px;
-    text-align: center;
-    font-weight: bold;
-  }
-
-  /* Ajusta la lista de jugadores */
-  #lista-jugadores {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5px;
-  }
-
-  .jugador-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%; /* Ajusta al 100% para evitar desplazamientos */
-    gap: 5px;
-  }
-
-  .bandera-img {
-    width: 25px;
-    height: auto;
-  }
-
-  .jugador-input {
-    width: 65%; /* Ajusta para que no se desborde */
-    text-align: center;
-  }
-  #respuesta,
-  #comprobar {
-    width: 100%; /* Ocupa todo el ancho en móviles */
-  }
-
-  #escudos-container img {
-    width: 80px; /* Escudos más pequeños en móviles */
-    height: 80px;
-  }
-
-  .flecha {
-    font-size: 30px; /* Flechas más pequeñas en móviles */
-  }
-
-  #historial-scores {
-    width: 100%; /* Ocupa todo el ancho en móviles */
-    margin-top: 20px; /* Más espacio en móviles */
-  }
-
-  #nombre-usuario-container {
-    flex-direction: column; /* Apila el input y el botón en móviles */
-    gap: 10px; /* Espacio entre elementos */
-  }
-
-  #nombre-usuario,
-  #confirmar-nombre {
-    width: 100%; /* Ocupa todo el ancho en móviles */
-    margin-left: 0; /* Elimina el margen izquierdo */
-  }
-}
-
 .welcome-container {
   padding: 20px;
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.1); /* Fondo con transparencia */
   backdrop-filter: blur(10px); /* Efecto de desenfoque */
   text-align: center;
-  max-width: 600px;
+  max-width: 800px;
   width: 100%;
   box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3); /* Sombra más suave */
   transition: all 0.3s ease-in-out;
@@ -573,4 +566,124 @@ p:hover {
 .quiz-container:hover .quiz-overlay,
 .quiz-container:hover .quiz-text {
   opacity: 1; /* Muestra el overlay y el texto */
+}
+
+/* Media Queries para móviles */
+@media (max-width: 600px) {
+  .container10 {
+    max-width: 95%; /* Usa un ancho más amplio en móviles */
+    min-width: unset; /* Evita restricciones innecesarias */
+    padding: 15px; /* Reduce el padding para que no se vea tan grande */
+    margin: 0 auto; /* Centra el contenedor */
+  }
+
+  #pregunta {
+    font-size: 18px; /* Ajusta el tamaño del título */
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.2;
+    margin: 0%;
+  }
+  p {
+    color: #000000; /* Gris muy claro */
+    font-size: 0.7rem;
+    text-align: center;
+    font-weight: 100;
+  }
+
+  /* Efecto de iluminación al pasar el mouse */
+  p:hover {
+    color: #ffeb3b; /* Amarillo claro al hacer hover */
+    transition: color 0.3s ease-in-out;
+  }
+  #contador {
+    margin: 0%;
+    font-size: 14px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  /* Ajusta la lista de jugadores */
+  #lista-jugadores {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .jugador-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%; /* Ajusta al 100% para evitar desplazamientos */
+    gap: 5px;
+  }
+  h1 {
+    color: #ffffff; /* Blanco puro */
+    margin-bottom: 10px;
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4); /* Sombra suave para mejorar la visibilidad */
+  }
+  .bandera-img {
+    width: 25px;
+    height: auto;
+  }
+
+  .jugador-input {
+    width: 65%; /* Ajusta para que no se desborde */
+    text-align: center;
+  }
+  #respuesta,
+  #comprobar {
+    width: 100%; /* Ocupa todo el ancho en móviles */
+  }
+  #escudos-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en varias líneas */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    gap: 10px; /* Espacio entre los elementos */
+    max-height: 400px; /* Altura máxima del contenedor */
+    overflow-y: auto; /* Añade un scroll vertical si el contenido excede la altura */
+    padding: 10px; /* Espacio interno para que no se peguen los elementos al borde */
+    border-radius: 8px; /* Bordes redondeados */
+    align-items: center;
+    margin-top: 10px;
+    min-width: auto;
+  }
+  #escudos-container img {
+    width: 80px; /* Escudos más pequeños en móviles */
+    height: 80px;
+  }
+
+  .flecha {
+    font-size: 30px; /* Flechas más pequeñas en móviles */
+  }
+
+  #nombre-usuario-container {
+    flex-direction: column; /* Apila el input y el botón en móviles */
+    gap: 10px; /* Espacio entre elementos */
+  }
+
+  #nombre-usuario,
+  #confirmar-nombre {
+    width: 100%; /* Ocupa todo el ancho en móviles */
+    margin-left: 0; /* Elimina el margen izquierdo */
+  }
+  .container {
+    background-color: #e4d6c6;
+    background: rgba(255, 255, 255, 0.1); /* Fondo con transparencia */
+    backdrop-filter: blur(10px); /* Efecto de desenfoque */
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3); /* Sombra más suave */
+    transition: all 0.3s ease-in-out;
+    min-width: 80%;
+    border-radius: 8px;
+    max-width: 90%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 20%; /* Espacio entre el juego y el historial */
+  }
 }
