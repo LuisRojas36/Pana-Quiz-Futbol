@@ -161,7 +161,7 @@ const jugadores_encontrar = [
     "NESTA",
   ],
   [
-    ("Jugadores Holandeses",
+    "Jugadores Holandeses",
     "CRUYFF",
     "VAN-BASTEN",
     "BERGKAMP",
@@ -171,7 +171,7 @@ const jugadores_encontrar = [
     "RIJKAARD",
     "VAN-PERSIE",
     "KOEMAN",
-    "GAKPO"),
+    "GAKPO",
   ],
   [
     "Equipos de La Liga MX",
@@ -406,7 +406,7 @@ const jugadores_encontrar = [
     "DINAMARCA",
   ],
   [
-    "Paises Campeones de Copa America (Todos)",
+    "Paises Campeones de Copa America",
     "ARGENTINA",
     "BRASIL",
     "URUGUAY",
@@ -427,7 +427,6 @@ const jugadores_encontrar = [
     "DINAMARCA",
     "GRECIA",
     "RUSIA",
-    "CHECOSLOVAQUIA",
   ],
   [
     "Paises Campeones de Concachampions",

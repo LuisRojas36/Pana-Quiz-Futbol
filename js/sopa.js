@@ -62,7 +62,7 @@ function mostrarModal(titulo, mensaje) {
 }
 function colocarPalabra(palabra) {
   let colocada = false;
-  let intentos = 100; // Evitar bucles infinitos
+  let intentos = 150; // Evitar bucles infinitos
 
   while (!colocada && intentos > 0) {
     intentos--;
